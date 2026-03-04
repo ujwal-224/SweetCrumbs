@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | SweetCrumbs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Plus Jakarta Sans',sans-serif;
+background:#f7f3f5;
+color:#222;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:white;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#f0427c;
+}
+
+.nav-links a{
+margin:0 15px;
+text-decoration:none;
+color:#333;
+font-weight:600;
+}
+
+.nav-links a:hover{
+color:#f0427c;
+}
+
+.order-btn{
+background:#f0427c;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+border:none;
+}
+
+/* HERO */
+
+.hero{
+height:420px;
+background:url("https://images.unsplash.com/photo-1509440159596-0249088772ff") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:600px;
+}
+
+.hero h1{
+font-size:50px;
+margin:10px 0;
+}
+
+.hero button{
+margin-top:20px;
+padding:12px 25px;
+border-radius:30px;
+border:none;
+background:white;
+color:#f0427c;
+font-weight:bold;
+}
+
+/* STORY SECTION */
+
+.story{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+padding:80px 60px;
+align-items:center;
+}
+
+.story img{
+width:100%;
+border-radius:20px;
+}
+
+.story h2{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.stats{
+display:flex;
+gap:40px;
+margin-top:20px;
+}
+
+.stat{
+color:#f0427c;
+font-weight:bold;
+font-size:20px;
+}
+
+/* PHILOSOPHY */
+
+.philosophy{
+background:#f1e8ec;
+padding:70px 60px;
+text-align:center;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* LOCATION */
+
+.location{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+padding:80px 60px;
+align-items:center;
+}
+
+.map img{
+width:100%;
+border-radius:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+padding:50px;
+text-align:center;
+}
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 900px){
+
+.container{
+padding:0 20px;
+}
+
+/* NAVBAR */
+
+.navbar .container{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-links a{
+margin:6px 10px;
+}
+
+/* HERO */
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+/* SECTIONS */
+
+.why{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+/* CARDS */
+
+.dessert-grid{
+grid-template-columns:1fr 1fr;
+}
+
+/* GALLERY */
+
+.gallery{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width:500px){
+
+.hero h1{
+font-size:28px;
+}
+
+.container{
+padding:0 15px;
+}
+
+.dessert-grid{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.btn{
+padding:8px 18px;
+font-size:14px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">SweetCrumbs</div>
+
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="gallery.html">Gallery</a>
+<a href="about.html" style="color:#f0427c;">About Us</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<button class="order-btn">Order Now</button>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<p>ESTABLISHED 1998</p>
+<h1>Our Sweet Story</h1>
+
+<p>
+Handcrafting joy for over two decades with the finest local ingredients.
+</p>
+
+<button>Discover Our Heritage</button>
+
+</div>
+
+</section>
+
+
+
+<!-- STORY SECTION -->
+
+<section class="story">
+
+<img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf">
+
+<div>
+
+<h2>The Hands Behind the Dough</h2>
+
+<p>
+After years of training in Paris, Jane returned home to create
+world-class pastries accessible to everyone.
+</p>
+
+<div class="stats">
+
+<div>
+<div class="stat">25+</div>
+<p>Years Experience</p>
+</div>
+
+<div>
+<div class="stat">150K+</div>
+<p>Loaves Baked</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PHILOSOPHY -->
+
+<section class="philosophy">
+
+<h2>Our Philosophy</h2>
+
+<p>The three pillars that define every product we serve.</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>Artisan Craft</h3>
+<p>Every loaf is shaped by hand using traditional baking techniques.</p>
+</div>
+
+<div class="card">
+<h3>Local Sourcing</h3>
+<p>We partner with local farmers for fresh seasonal ingredients.</p>
+</div>
+
+<div class="card">
+<h3>Fresh Daily</h3>
+<p>Everything is baked daily to ensure peak flavor and texture.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LOCATION -->
+
+<section class="location">
+
+<div>
+
+<h2>Find Us</h2>
+
+<p>
+Visit our flagship bakery in the historic district.
+Warm bread and fresh coffee are always waiting.
+</p>
+
+<p><b>123 Artisan Way</b><br>Pastry Hills, CA</p>
+
+<p><b>Opening Hours</b><br>
+Mon–Fri: 6am – 6pm<br>
+Sat–Sun: 7am – 4pm</p>
+
+</div>
+
+<div class="map">
+
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=San+Francisco&zoom=12&size=600x400&maptype=roadmap">
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<h3>SweetCrumbs</h3>
+
+<p>© 2026 SweetCrumbs Artisan Bakery</p>
+
+</footer>
+
+</body>
+</html>

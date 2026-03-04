@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery | SweetCrumbs</title>
+
+<style>
+
+body{
+font-family: 'Segoe UI', sans-serif;
+margin:0;
+background:#f7f2f4;
+color:#222;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:white;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#f0427c;
+}
+
+.nav-links a{
+margin:0 15px;
+text-decoration:none;
+color:#333;
+font-weight:600;
+}
+
+.nav-links a:hover{
+color:#f0427c;
+}
+
+/* HEADER */
+
+.header{
+padding:60px;
+}
+
+.header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.header p{
+color:#666;
+max-width:500px;
+}
+
+/* FILTER BUTTONS */
+
+.filters{
+margin-top:30px;
+}
+
+.filters button{
+border:none;
+padding:10px 20px;
+margin-right:10px;
+border-radius:20px;
+background:#eee;
+cursor:pointer;
+}
+
+.filters button.active{
+background:#f0427c;
+color:white;
+}
+
+/* GALLERY GRID */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:0 60px 80px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* PAGINATION */
+
+.pagination{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:60px;
+}
+
+.pagination button{
+border:none;
+padding:10px 15px;
+border-radius:50%;
+background:#eee;
+cursor:pointer;
+}
+
+.pagination .active{
+background:#f0427c;
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:40px;
+}
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 900px){
+
+.container{
+padding:0 20px;
+}
+
+/* NAVBAR */
+
+.navbar .container{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-links a{
+margin:6px 10px;
+}
+
+/* HERO */
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+/* SECTIONS */
+
+.why{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+/* CARDS */
+
+.dessert-grid{
+grid-template-columns:1fr 1fr;
+}
+
+/* GALLERY */
+
+.gallery{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width:500px){
+
+.hero h1{
+font-size:28px;
+}
+
+.container{
+padding:0 15px;
+}
+
+.dessert-grid{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.btn{
+padding:8px 18px;
+font-size:14px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">SweetCrumbs</div>
+
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="gallery.html" style="color:#f0427c;">Gallery</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+<!-- HEADER -->
+
+<section class="header">
+
+<h1>Our Artisan Gallery</h1>
+
+<p>
+Browse our daily selection of handcrafted sourdoughs,
+delicate pastries, and celebration cakes.
+</p>
+
+<div class="filters">
+
+<button class="active">All</button>
+<button>Sourdough</button>
+<button>Pastries</button>
+<button>Cakes</button>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY GRID -->
+
+<section class="gallery">
+
+<img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+<img src="https://th.bing.com/th/id/OIP.F4H_sTaN5RZaRSxDM4kNVwHaEo?w=287&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="height: 290px;">
+
+<img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191" style="height: 325px;">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<img src="https://th.bing.com/th/id/OIP.u8JiIrJeP-ZIFDZ2GfKHKQHaE7?w=289&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" style="height: 320px;">
+
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" style="height: 670px;">
+<img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75">
+<img src="data:image/webp;base64,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">
+
+</section>
+
+
+<!-- PAGINATION -->
+
+<div class="pagination">
+
+<button>‹</button>
+<button class="active">1</button>
+<button>2</button>
+<button>3</button>
+<button>›</button>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+SweetCrumbs Artisan Bakery © 2026
+
+</footer>
+
+</body>
+</html>

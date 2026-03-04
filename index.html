@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SweetCrumbs Artisan Bakery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#f0427c;
+--primary-hover:#d13568;
+--bg-soft:#fff5f8;
+--text-dark:#1a1a1a;
+--text-muted:#666;
+--glass-bg:rgba(255,255,255,0.7);
+--glass-border:rgba(255,255,255,0.3);
+--radius-lg:20px;
+--radius-full:999px;
+--shadow-soft:0 10px 30px rgba(0,0,0,0.06);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Plus Jakarta Sans',sans-serif;
+}
+
+body{
+color:var(--text-dark);
+background:white;
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 24px;
+}
+
+.text-gradient{
+background:linear-gradient(135deg,#f0427c,#ff85a2);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section{
+padding:80px 0;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #eee;
+z-index: 100;
+}
+
+.navbar .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+font-weight:600;
+color:var(--text-dark);
+}
+
+.nav-links a:hover{
+color:var(--primary);
+}
+
+.btn{
+background:var(--primary);
+color:white;
+padding:10px 25px;
+border-radius:var(--radius-full);
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:var(--primary-hover);
+transform:scale(1.05);
+}
+
+/* HERO */
+
+.hero{
+background:var(--bg-soft);
+padding:120px 0;
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.hero h1{
+font-size:50px;
+font-weight:800;
+}
+
+.hero p{
+color:var(--text-muted);
+margin:20px 0;
+}
+
+.hero img{
+width:100%;
+border-radius:var(--radius-lg);
+box-shadow:var(--shadow-soft);
+}
+
+/* CARDS */
+
+.dessert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+border-radius:var(--radius-lg);
+overflow:hidden;
+box-shadow:var(--shadow-soft);
+transition:0.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+margin:15px 0 5px;
+}
+
+.card p{
+color:var(--primary);
+font-weight:600;
+margin-bottom:10px;
+}
+
+.card button{
+margin-bottom:20px;
+}
+
+/* WHY SECTION */
+
+.why{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.why img{
+width:100%;
+border-radius:var(--radius-lg);
+box-shadow:var(--shadow-soft);
+}
+
+.why ul{
+margin-top:20px;
+}
+
+.why li{
+margin-bottom:12px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+border-radius:16px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+color:white;
+padding:60px 0;
+margin-top:80px;
+}
+
+footer p{
+opacity:0.7;
+margin-top:10px;
+}
+.hero-slider{
+position:relative;
+width:100%;
+height:400px;
+overflow:hidden;
+border-radius:20px;
+}
+
+.hero-slider img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+animation:slideShow 16s infinite;
+}
+
+.hero-slider img:nth-child(1){animation-delay:0s;}
+.hero-slider img:nth-child(2){animation-delay:4s;}
+.hero-slider img:nth-child(3){animation-delay:8s;}
+.hero-slider img:nth-child(4){animation-delay:12s;}
+
+@keyframes slideShow{
+
+0%{opacity:0;}
+10%{opacity:1;}
+25%{opacity:1;}
+35%{opacity:0;}
+100%{opacity:0;}
+
+}
+.nav-links a{
+text-decoration:none;
+margin-left:20px;
+font-weight:600;
+color:#1a1a1a;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#f0427c;
+}
+
+/* Active Page */
+
+.nav-links .active{
+color:#f0427c;
+position:relative;
+}
+
+.nav-links .active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:100%;
+height:3px;
+background:#f0427c;
+border-radius:2px;
+}
+/* INTRO ANIMATION */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#fff5f8;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:hideIntro 4s forwards;
+}
+
+.intro-content{
+text-align:center;
+}
+
+.intro-cake{
+width:550px;
+border-radius:20px;
+animation:popCake 1.2s ease;
+}
+
+.intro-text{
+margin-top:20px;
+font-size:40px;
+font-weight:800;
+color:#f0427c;
+opacity:0;
+animation:textAppear 1s ease forwards;
+animation-delay:1.2s;
+}
+
+/* cake pop animation */
+
+@keyframes popCake{
+
+0%{
+transform:scale(0);
+opacity:0;
+}
+
+80%{
+transform:scale(1.1);
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* text animation */
+
+@keyframes textAppear{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* hide intro */
+
+@keyframes hideIntro{
+
+0%{
+opacity:1;
+}
+
+90%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+visibility:hidden;
+}
+
+}
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 900px){
+
+.container{
+padding:0 20px;
+}
+
+/* NAVBAR */
+
+.navbar .container{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-links a{
+margin:6px 10px;
+}
+
+/* HERO */
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+/* SECTIONS */
+
+.why{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+/* CARDS */
+
+.dessert-grid{
+grid-template-columns:1fr 1fr;
+}
+
+/* GALLERY */
+
+.gallery{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width:500px){
+
+.hero h1{
+font-size:28px;
+}
+
+.container{
+padding:0 15px;
+}
+
+.dessert-grid{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.btn{
+padding:8px 18px;
+font-size:14px;
+}
+
+}
+</style>
+</head>
+
+<body>
+<div id="intro">
+
+<div class="intro-content">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" class="intro-cake">
+
+<h1 class="intro-text">SweetCrumbs</h1>
+
+</div>
+
+</div>
+<header class="navbar">
+<div class="container">
+
+<h2 class="text-gradient">SweetCrumbs</h2>
+
+<nav class="nav-links">
+<a href="index.html" class="active">Home</a>
+<a href="menu.html">Menu</a>
+<a href="gallery.html">Gallery</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<button class="btn">Order Now</button>
+
+</div>
+</header>
+
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div>
+<h1>Artisan Cakes <br>
+<span class="text-gradient">Baked with Love.</span>
+</h1>
+
+<p>
+Experience handcrafted desserts made with organic ingredients and SweetCrumbs magic.
+</p>
+
+<button class="btn">View Menu</button>
+</div>
+
+<div class="hero-slider">
+  <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+  <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e">
+  <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777">
+  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+</div>
+
+</div>
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<h2>Our Signature Creations</h2>
+
+<div class="dessert-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<h3>Velvet Rose Cupcake</h3>
+<p>$4.50</p>
+<button class="btn">Add to Order</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777">
+<h3>Lemon Meringue Tart</h3>
+<p>$6.00</p>
+<button class="btn">Add to Order</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e">
+<h3>Pistachio Macaron</h3>
+<p>$6.00</p>
+<button class="btn">Add to Order</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section">
+
+<div class="container why">
+
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+
+<div>
+
+<h2>Why Choose <span class="text-gradient">SweetCrumbs?</span></h2>
+
+<ul>
+<li>Fresh ingredients sourced daily</li>
+<li>Artisan desserts crafted by experts</li>
+<li>Custom cake designs for events</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<h2>Sweet Moments from our Community</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+<img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e">
+<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
+
+</div>
+
+</div>
+</section>
+
+
+<footer>
+
+<div class="container">
+
+<h2 class="text-gradient">SweetCrumbs</h2>
+
+<p>
+Crafting happiness in every bite since 2010.
+</p>
+
+</div>
+
+</footer>
+<script>
+
+setTimeout(() => {
+
+document.getElementById("intro").style.display = "none";
+
+},4000);
+
+</script>
+</body>
+</html>
